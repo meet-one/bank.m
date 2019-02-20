@@ -2,7 +2,7 @@
 
 #### Please don't transfer tokens to bank.m until MEET.ONE sidechain is launched. (2019-02-26 21:00:00)
 
-## Mainnet
+## EOS mainnet
 Send MEETONE token from mainnet to sidechain:
 ```
 cleos -u http://mainnet.meet.one push action eosiomeetone transfer '["MAINNET_ACCOUNT","bank.m","100.0000 MEETONE","SIDECHAIN_ACCOUNT"]' -p MAINNET_ACCOUNT
@@ -10,6 +10,7 @@ cleos -u http://mainnet.meet.one push action eosiomeetone transfer '["MAINNET_AC
 bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` must be has suffix `.m`
 
 query transfered informations:
+
 by transfer account:
 
 ```
@@ -21,7 +22,7 @@ by transaction id:
 cleos -u http://mainnet.meet.one get table bank.m bank.m book --index 3 --key-type -L transaction_id -U transaction_id
 ```
 
-## Sidechain
+## MEET.ONE sidechain
 
 query synchronous information which transfered from mainnet:
 by mainnet transfer account:
