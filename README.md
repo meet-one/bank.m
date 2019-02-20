@@ -1,5 +1,7 @@
 # bank.m 
 
+### Please don't transfer token to bank.m until sidechain is launched. (2019-02-26 21:00:00)
+
 ## Mainnet
 Send MEETONE token from mainnet to sidechain:
 ```
