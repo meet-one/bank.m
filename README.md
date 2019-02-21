@@ -1,6 +1,6 @@
 # bank.m 
 
-#### Please don't transfer tokens to bank.m until MEET.ONE sidechain is launched. (2019-02-26 21:00:00)
+#### Please don't transfer tokens to bank.m until MEET.ONE sidechain is launched. (2019-02-26 21:00:00,UTC+8)
 
 ## EOS mainnet
 Send MEETONE token from mainnet to sidechain:
