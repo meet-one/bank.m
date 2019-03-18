@@ -8,9 +8,11 @@ cleos -u https://mainnet.meet.one push action eosiomeetone transfer '["MAINNET_A
 bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` must be has suffix `.m`
 
 query transfered informations:
+```
+cleos -u https://mainnet.meet.one get table bank.m bank.m book -l -1
+```
 
 by transfer account:
-
 ```
 cleos -u https://mainnet.meet.one get table bank.m bank.m book --index 2 --key-type -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
 ```
@@ -23,8 +25,12 @@ cleos -u https://mainnet.meet.one get table bank.m bank.m book --index 3 --key-t
 ## MEET.ONE sidechain
 
 query synchronous information which transfered from mainnet:
+```
+cleos -u https://fullnode.meet.one get table bank.m bank.m synchrobook -l -1
+```
+
 by mainnet transfer account:
 ```
-cleos -u https://sidechain-test.meet.one:8888 get table bank.m bank.m synchrobook --index 2 --key-type -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
+cleos -u https://fullnode.meet.one get table bank.m bank.m synchrobook --index 2 --key-type -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
 ```
 If field `quantity` is negative, it means MEETONE token is already transferred.
