@@ -1,23 +1,23 @@
-# bank.m 
+# Transfer MEETONE token from EOS mainnet to MEET.ONE sidechain
 
 ## EOS mainnet
-Send MEETONE token from mainnet to sidechain:
+Transfer MEETONE token from mainnet to sidechain:
 ```
 cleos -u https://mainnet.meet.one push action eosiomeetone transfer '["MAINNET_ACCOUNT","bank.m","100.0000 MEETONE","SIDECHAIN_ACCOUNT"]' -p MAINNET_ACCOUNT
 ```
-bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` must be has suffix `.m`
+bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` name should be end with `.m`
 
-query transfered informations:
+query transfer records:
 ```
 cleos -u https://mainnet.meet.one get table bank.m bank.m book -l -1
 ```
 
-by transfer account:
+query transfer records by account name:
 ```
 cleos -u https://mainnet.meet.one get table bank.m bank.m book --index 2 --key-type -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
 ```
 
-by transaction id:
+query transfer records by transaction id:
 ```
 cleos -u https://mainnet.meet.one get table bank.m bank.m book --index 3 --key-type -L transaction_id -U transaction_id
 ```
@@ -29,7 +29,7 @@ query synchronous information which transfered from mainnet:
 cleos -u https://fullnode.meet.one get table bank.m bank.m synchrobook -l -1
 ```
 
-by mainnet transfer account:
+query transfer records by account name:
 ```
 cleos -u https://fullnode.meet.one get table bank.m bank.m synchrobook --index 2 --key-type -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
 ```
