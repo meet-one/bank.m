@@ -1,11 +1,18 @@
-# Transfer MEETONE token from EOS mainnet to MEET.ONE sidechain
+# Transfer MEETONE token between EOS mainnet and MEET.ONE sidechain
 
-## EOS mainnet
-Transfer MEETONE token from mainnet to sidechain:
+## Guide
+### Transfer MEETONE token from mainnet to sidechain:
 ```
 cleos -u https://mainnet.meet.one push action eosiomeetone transfer '["MAINNET_ACCOUNT","bank.m","100.0000 MEETONE","SIDECHAIN_ACCOUNT"]' -p MAINNET_ACCOUNT
 ```
 bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` name should be end with `.m`
+
+### Transfer MEETONE token from mainnet to sidechain:
+```
+cleos -u https://fullnode.meet.one transfer "MAINNET_ACCOUNT" "bank.m" "100 MEETONE" "MAINCHAIN_ACCOUNT" -p MAINNET_ACCOUNT
+```
+
+## EOS mainnet
 
 query transfer records:
 ```
