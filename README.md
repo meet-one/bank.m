@@ -8,7 +8,7 @@ bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` name should be end with `.
 
 ### Transfer MEETONE token from MEETONE sidechain to EOS mainnet:
 ```
-cleos -u https://fullnode.meet.one transfer "MAINNET_ACCOUNT" "bank.m" "100 MEETONE" "MAINCHAIN_ACCOUNT" -p MAINNET_ACCOUNT
+cleos -u https://fullnode.meet.one transfer "SIDECHAIN_ACCOUNT" "bank.m" "100 MEETONE" "MAINCHAIN_ACCOUNT" -p SIDECHAIN_ACCOUNT
 ```
 
 ## EOS mainnet
