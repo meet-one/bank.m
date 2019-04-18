@@ -11,7 +11,7 @@ bank.m only accept MEETONE token, `SIDECHAIN_ACCOUNT` name should be end with `.
 cleos -u https://fullnode.meet.one transfer "SIDECHAIN_ACCOUNT" "bank.m" "100 MEETONE" "MAINCHAIN_ACCOUNT" -p SIDECHAIN_ACCOUNT
 ```
 
-## EOS mainnet
+## Query
 
 query transfer records:
 ```
@@ -27,8 +27,6 @@ query transfer records by transaction id:
 ```
 cleos -u https://mainnet.meet.one get table bank.m bank.m book --index 3 --key-type -L transaction_id -U transaction_id
 ```
-
-## MEET.ONE sidechain
 
 query synchronous information which transfered from mainnet:
 ```
