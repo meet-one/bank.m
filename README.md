@@ -1,4 +1,3 @@
-# Transfer MEETONE token between EOS mainnet and MEET.ONE sidechain
 
 ## Guide
 ### Transfer MEETONE token from mainnet to sidechain:
