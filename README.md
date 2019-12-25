@@ -39,6 +39,6 @@ cleos -u https://fullnode.meet.one get table bank.m eosio synchrobooks -l -1
 
 query transfer records by account name:
 ```
-cleos -u https://fullnode.meet.one get table bank.m bank.m synchrobook --index 2 --key-type i64 -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
+cleos -u https://fullnode.meet.one get table bank.m eosio synchrobooks --index 2 --key-type i64 -L MAINNET_ACCOUNT -U MAINNET_ACCOUNT
 ```
 If field `quantity` is negative, it means MEETONE token is already transferred.
