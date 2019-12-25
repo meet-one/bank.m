@@ -2,15 +2,94 @@
   "version": "eosio::abi/1.1",
   "types": [],
   "structs": [{
-      "name": "active",
+      "name": "activate",
       "base": "",
       "fields": [{
-          "name": "is_active",
+          "name": "issuer",
+          "type": "name"
+        },{
+          "name": "symbol",
+          "type": "symbol"
+        },{
+          "name": "is_activated",
           "type": "bool"
         }
       ]
     },{
+      "name": "addblackname",
+      "base": "",
+      "fields": [{
+          "name": "name",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "addchaintk",
+      "base": "",
+      "fields": [{
+          "name": "main_chain_issuer",
+          "type": "name"
+        },{
+          "name": "main_chain_symbol",
+          "type": "symbol"
+        },{
+          "name": "chain",
+          "type": "name"
+        },{
+          "name": "other_chain_issuer",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "addtoken",
+      "base": "",
+      "fields": [{
+          "name": "issuer",
+          "type": "name"
+        },{
+          "name": "min_quantity",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "black_list",
+      "base": "",
+      "fields": [{
+          "name": "name",
+          "type": "name"
+        }
+      ]
+    },{
       "name": "book",
+      "base": "",
+      "fields": [{
+          "name": "index",
+          "type": "uint64"
+        },{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "receiver",
+          "type": "string"
+        },{
+          "name": "token_issuer",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        },{
+          "name": "transfer_time",
+          "type": "uint64"
+        },{
+          "name": "transaction_id",
+          "type": "checksum256"
+        }
+      ]
+    },{
+      "name": "booktb",
       "base": "",
       "fields": [{
           "name": "index",
@@ -30,58 +109,47 @@
         }
       ]
     },{
+      "name": "delblackname",
+      "base": "",
+      "fields": [{
+          "name": "name",
+          "type": "name"
+        }
+      ]
+    },{
       "name": "deletebook",
       "base": "",
       "fields": [{
           "name": "book",
           "type": "string"
         },{
+          "name": "chain",
+          "type": "name"
+        },{
           "name": "index",
           "type": "uint64"
         }
       ]
     },{
-      "name": "deleteglobal",
-      "base": "",
-      "fields": []
-    },{
-      "name": "global",
+      "name": "deltoken",
       "base": "",
       "fields": [{
-          "name": "index",
-          "type": "uint64"
+          "name": "issuer",
+          "type": "name"
         },{
-          "name": "is_active",
-          "type": "bool"
-        },{
-          "name": "last_synced_index",
-          "type": "uint64"
-        },{
-          "name": "synced_count",
-          "type": "uint64"
-        },{
-          "name": "last_transferred_index",
-          "type": "uint64"
-        },{
-          "name": "transferred_count",
-          "type": "uint64"
+          "name": "symbol",
+          "type": "symbol"
         }
       ]
     },{
-      "name": "setglobal",
+      "name": "pair_name_name",
       "base": "",
       "fields": [{
-          "name": "last_synced_index",
-          "type": "uint64"
+          "name": "key",
+          "type": "name"
         },{
-          "name": "synced_count",
-          "type": "uint64"
-        },{
-          "name": "last_transferred_index",
-          "type": "uint64"
-        },{
-          "name": "transferred_count",
-          "type": "uint64"
+          "name": "value",
+          "type": "name"
         }
       ]
     },{
@@ -91,18 +159,59 @@
           "name": "index",
           "type": "uint64"
         },{
+          "name": "chain",
+          "type": "name"
+        },{
           "name": "from",
           "type": "name"
         },{
           "name": "receiver",
+          "type": "string"
+        },{
+          "name": "token_issuer",
           "type": "name"
         },{
           "name": "quantity",
           "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        },{
+          "name": "transfer_time",
+          "type": "uint64"
         }
       ]
     },{
       "name": "synchrobook",
+      "base": "",
+      "fields": [{
+          "name": "index",
+          "type": "uint64"
+        },{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "receiver",
+          "type": "string"
+        },{
+          "name": "token_issuer",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        },{
+          "name": "transfer_time",
+          "type": "uint64"
+        },{
+          "name": "transaction_id",
+          "type": "checksum256"
+        }
+      ]
+    },{
+      "name": "synchrobooktb",
       "base": "",
       "fields": [{
           "name": "index",
@@ -127,25 +236,60 @@
       "fields": [{
           "name": "index",
           "type": "uint64"
+        },{
+          "name": "chain",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "token",
+      "base": "",
+      "fields": [{
+          "name": "index",
+          "type": "uint64"
+        },{
+          "name": "issuer",
+          "type": "name"
+        },{
+          "name": "min_quantity",
+          "type": "asset"
+        },{
+          "name": "other_chain",
+          "type": "pair_name_name[]"
+        },{
+          "name": "is_activated",
+          "type": "bool"
         }
       ]
     }
   ],
   "actions": [{
-      "name": "active",
-      "type": "active",
+      "name": "activate",
+      "type": "activate",
+      "ricardian_contract": ""
+    },{
+      "name": "addblackname",
+      "type": "addblackname",
+      "ricardian_contract": ""
+    },{
+      "name": "addchaintk",
+      "type": "addchaintk",
+      "ricardian_contract": ""
+    },{
+      "name": "addtoken",
+      "type": "addtoken",
+      "ricardian_contract": ""
+    },{
+      "name": "delblackname",
+      "type": "delblackname",
       "ricardian_contract": ""
     },{
       "name": "deletebook",
       "type": "deletebook",
       "ricardian_contract": ""
     },{
-      "name": "deleteglobal",
-      "type": "deleteglobal",
-      "ricardian_contract": ""
-    },{
-      "name": "setglobal",
-      "type": "setglobal",
+      "name": "deltoken",
+      "type": "deltoken",
       "ricardian_contract": ""
     },{
       "name": "syncbook",
@@ -158,23 +302,41 @@
     }
   ],
   "tables": [{
+      "name": "blacklist",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": [],
+      "type": "black_list"
+    },{
       "name": "book",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": [],
+      "type": "booktb"
+    },{
+      "name": "books",
       "index_type": "i64",
       "key_names": [],
       "key_types": [],
       "type": "book"
     },{
-      "name": "global",
-      "index_type": "i64",
-      "key_names": [],
-      "key_types": [],
-      "type": "global"
-    },{
       "name": "synchrobook",
       "index_type": "i64",
       "key_names": [],
       "key_types": [],
+      "type": "synchrobooktb"
+    },{
+      "name": "synchrobooks",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": [],
       "type": "synchrobook"
+    },{
+      "name": "token",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": [],
+      "type": "token"
     }
   ],
   "ricardian_clauses": [],
