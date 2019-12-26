@@ -42,7 +42,7 @@ cleos -u https://mainnet.meet.one get table bank.m meetone books --index 2 --key
 
 query transfer records by transaction id:
 ```
-cleos -u https://mainnet.meet.one get table bank.m meetone books --index 4 --key-type sha256 -L transaction_id -U transaction_id
+cleos -u https://mainnet.meet.one get table bank.m meetone books --index 3 --key-type sha256 -L transaction_id -U transaction_id
 ```
 
 ### query synchronous information which transfered from mainnet:
